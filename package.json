@@ -1,0 +1,10 @@
+{
+  "name": "signal-native",
+  "version": "0.0.0",
+  "devDependencies": {
+    "nw": "0.20.0-sdk"
+  },
+  "scripts": {
+    "dev": "node_modules/.bin/nw src"
+  }
+}
