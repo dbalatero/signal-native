@@ -17,6 +17,6 @@
   "scripts": {
     "start": "brunch watch",
     "dev": "./bin/build && node_modules/.bin/nw ./build",
-    "postinstall": "./bin/install"
+    "postinstall": "./bin/setup"
   }
 }
