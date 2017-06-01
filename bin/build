@@ -7,5 +7,14 @@ project_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 rm -fr $project_root/build
 mkdir -p $project_root/build
 
+cp -r $project_root/signal/dist/* $project_root/build/
 cp -r $project_root/src/* $project_root/build/
-ln -s $project_root/signal $project_root/build/signal
+
+# Build project manifest.json
+$project_root/bin/manifest
+
+cd $project_root/build && \
+  cat $project_root/build/js/options.js \
+    $project_root/build/main.js > $project_root/build/js/options-new.js && \
+  rm $project_root/build/js/options.js && \
+  mv $project_root/build/js/options-new.js $project_root/build/js/options.js
