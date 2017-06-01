@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const fs = require('fs');
+
+const rootPath = path.normalize(`${__dirname}/..`);
+
+const signalManifest = fs.readFileSync(`${rootPath}/signal/manifest.json`);
+const manifest = JSON.parse(signalManifest);
+
+manifest.description = "Mac native client for Signal";
+manifest.nodejs = true;
+
+const json = JSON.stringify(manifest, null, '  ');
+fs.writeFileSync(`${rootPath}/build/manifest.json`, json);
