@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# vim:filetype=sh
+
+project_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
+rm -fr $project_root/build
+mkdir -p $project_root/build
+
+cp -r $project_root/src/* $project_root/build/
+ln -s $project_root/signal $project_root/build/signal

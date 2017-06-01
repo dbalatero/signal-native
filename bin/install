@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# vim:filetype=sh
+
+project_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+signal_repo="https://github.com/WhisperSystems/Signal-Desktop.git"
+
+if [ ! -d $project_root/signal ]; then
+  echo "Cloning $signal_repo"
+  git clone $signal_repo $project_root/signal >/dev/null
+fi
+
+cd $project_root/signal && \
+  npm install && \
+  node_modules/grunt-cli/bin/grunt

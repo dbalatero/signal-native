@@ -1,10 +1,14 @@
 {
   "name": "signal-native",
   "version": "0.0.0",
+  "description": "Native Mac client for Signal",
+  "license": "MIT",
+  "repository": "https://github.com/dbalatero/signal-native",
   "devDependencies": {
     "nw": "0.20.0-sdk"
   },
   "scripts": {
-    "dev": "node_modules/.bin/nw src"
+    "dev": "bin/build && node_modules/.bin/nw build",
+    "postinstall": "bin/install"
   }
 }
