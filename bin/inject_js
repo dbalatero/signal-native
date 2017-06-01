@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# vim:filetype=sh
+
+source $(dirname $0)/shared/config.sh
+
+cd $project_root/build && \
+  cat $project_root/signal/dist/js/options.js \
+    $project_root/dist/extension.bundle.js > \
+      $project_root/build/js/options.js

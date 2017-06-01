@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 (function() {
   function isExternalUrl(url) {
     return url.match(/^https?/)

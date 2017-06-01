@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# vim:filetype=sh
+
+source $(dirname $0)/shared/config.sh
+
+rm -fr $project_root/build
+mkdir -p $project_root/build
+
+cp -r $project_root/signal/dist/* $project_root/build/

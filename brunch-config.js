@@ -12,6 +12,13 @@ module.exports = {
   },
   sourceMaps: false,
   plugins: {
+    beforeBrunch: [
+      "./bin/prebuild"
+    ],
+    afterBrunch: [
+      "./bin/manifest",
+      "./bin/inject_js"
+    ],
     babel: {
       presets: ['latest']
     }

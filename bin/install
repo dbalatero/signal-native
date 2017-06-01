@@ -2,7 +2,8 @@
 
 # vim:filetype=sh
 
-project_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+source $(dirname $0)/shared/config.sh
+
 signal_repo="https://github.com/WhisperSystems/Signal-Desktop.git"
 
 if [ ! -d $project_root/signal ]; then
