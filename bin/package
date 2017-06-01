@@ -13,6 +13,7 @@ built_app=$project_root/dist/nwjs.app
 src_target=$built_app/Contents/Resources/app.nw
 src_build_dir=$project_root/build
 final_app_path="$project_root/dist/Signal Private Messenger.app"
+icon_path=$project_root/assets/signal.icns
 
 echo "Cleaning any previous package..."
 rm -fr $built_app
@@ -24,6 +25,9 @@ cp -r $blank_app $built_app
 
 mkdir -p $src_target
 cp -r $src_build_dir/* $src_target/
+
+# Install custom icon
+cp $icon_path $built_app/Contents/Resources/app.icns
 
 echo "Renaming .app"
 mv -f $built_app "$final_app_path"
