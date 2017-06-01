@@ -1,25 +1,7 @@
-const fs = require('fs');
+const fixExternalLinks = require("./fix_external_links");
 
-(function() {
-  function isExternalUrl(url) {
-    return url.match(/^https?/)
-  }
+console.log("==> Injecting native extensions");
 
-  var win = nw.Window.get();
+fixExternalLinks();
 
-  win.on('new-win-policy', function(frame, url, policy) {
-    if (isExternalUrl(url)) {
-      policy.ignore();
-      nw.Shell.openExternal(url);
-    } else {
-      policy.forceCurrent();
-    }
-  });
-
-  win.on('navigation', function(frame, url, policy) {
-    if (isExternalUrl(url)) {
-      policy.ignore();
-      nw.Shell.openExternal(url);
-    }
-  });
-})();
+console.log("==> Finished injecting native extensions");
