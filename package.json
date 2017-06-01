@@ -5,9 +5,13 @@
   "license": "MIT",
   "repository": "https://github.com/dbalatero/signal-native",
   "devDependencies": {
+    "babel-brunch": "^6.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "brunch": "^2.10.9",
     "nw": "0.20.0-sdk"
   },
   "scripts": {
+    "start": "brunch watch",
     "dev": "bin/build && node_modules/.bin/nw build",
     "postinstall": "bin/install"
   }
