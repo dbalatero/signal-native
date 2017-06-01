@@ -10,6 +10,7 @@ module.exports = {
       }
     }
   },
+  sourceMaps: false,
   plugins: {
     babel: {
       presets: ['latest']
