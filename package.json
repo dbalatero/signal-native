@@ -10,7 +10,9 @@
     "babel-preset-latest": "^6.24.1",
     "before-brunch": "0.0.5",
     "brunch": "^2.10.9",
-    "nw": "git+https://github.com/nurishi/npm-installer.git#fix-download-extract"
+    "mousetrap": "^1.6.1",
+    "nw": "git+https://github.com/nurishi/npm-installer.git#fix-download-extract",
+    "sass-brunch": "^2.10.4"
   },
   "scripts": {
     "start": "brunch watch",

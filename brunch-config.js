@@ -21,6 +21,10 @@ module.exports = {
     ],
     babel: {
       presets: ['latest']
+    },
+    sass: {
+      mode: 'native',
+      modules: true
     }
   }
 }
