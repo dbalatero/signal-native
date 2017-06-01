@@ -4,7 +4,18 @@
 
 source $(dirname $0)/shared/config.sh
 
-cd $project_root/build && \
-  cat $project_root/signal/dist/js/options.js \
-    $project_root/dist/extension.bundle.js > \
-      $project_root/build/js/options.js
+cp -r $project_root/dist/extension.bundle.js $project_root/build/js
+cp $project_root/signal/dist/{index.html,options.html} $project_root/build/
+
+files=($project_root/build/options.html $project_root/build/index.html)
+
+echo "Injecting JS..."
+
+echo "require('src/main.js');" >> $project_root/build/js/extension.bundle.js
+
+for file in "${files[@]}"
+do
+  sed -i '' \
+    's/<\/body>/<script type="text\/javascript" src="js\/extension.bundle.js"><\/script><\/body>/' \
+    $file
+done
