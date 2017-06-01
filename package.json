@@ -10,7 +10,7 @@
     "babel-preset-latest": "^6.24.1",
     "before-brunch": "0.0.5",
     "brunch": "^2.10.9",
-    "nw": "0.22.1-sdk"
+    "nw": "git+https://github.com/nurishi/npm-installer.git#fix-download-extract"
   },
   "scripts": {
     "start": "brunch watch",
