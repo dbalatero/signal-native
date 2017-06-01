@@ -17,3 +17,14 @@ cd signal-native
 npm install
 brunch build
 ```
+
+## Develop new features
+
+To start developing, you can run `brunch watch` in the background to 
+auto-build the project as you develop.
+
+To start a dev copy of the Signal app, just run `npm run dev`.
+
+Once the app is open, you can right-click on the app and select Reload app to
+refresh your changes. `brunch watch` will take care of rebuilding the source
+as you save files.
