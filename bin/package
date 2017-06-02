@@ -8,12 +8,27 @@ source $(dirname $0)/shared/config.sh
 
 $project_root/bin/build
 
-blank_app=$project_root/node_modules/nw/nwjs/nwjs.app
+zip_file="nwjs-v0.22.3-osx-x64.zip"
+nwjs_stable_url="https://dl.nwjs.io/v0.22.3/$zip_file"
+nwjs_stable_path=$project_root/nwjs-stable
+blank_app=$nwjs_stable_path/nwjs.app
 built_app=$project_root/dist/nwjs.app
 src_target=$built_app/Contents/Resources/app.nw
 src_build_dir=$project_root/build
 final_app_path="$project_root/dist/Signal Private Messenger.app"
 icon_path=$project_root/assets/signal.icns
+
+if [ ! -d $nwjs_stable_path ]; then
+  unzip_directory=$(basename "$zip_file" ".zip")
+
+  echo "Downloading stable nwjs build..."
+  echo "  $nwjs_stable_url"
+
+  curl -o $zip_file $nwjs_stable_url
+  unzip $zip_file > /dev/null
+  rm $project_root/$zip_file
+  mv $project_root/$unzip_directory $nwjs_stable_path
+fi
 
 echo "Cleaning any previous package..."
 rm -fr $built_app
