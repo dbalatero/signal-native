@@ -9,6 +9,7 @@ won't give you (thanks for the initial guide though!).
 
 ## Features
 
+* Uses the Signal icon in task switcher
 * External links will open correctly in your configured external browser
 * Extra keyboard shortcuts
   * `cmd+shift+[` and `cmd+shift+]` switch to previous/next chats in your list
