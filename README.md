@@ -1,5 +1,7 @@
 # signal-native
 
+![Signal](https://github.com/dbalatero/signal-native/raw/master/assets/icon_256.png "Signal")
+
 This repository allows you to build a native Mac client for Signal, with some 
 extra fixes and features that following 
 [this guide](https://timtaubert.de/blog/2016/01/build-your-own-signal-desktop/) 
