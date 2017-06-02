@@ -8,6 +8,7 @@ const rootPath = path.normalize(`${__dirname}/..`);
 const signalManifest = fs.readFileSync(`${rootPath}/signal/manifest.json`);
 const manifest = JSON.parse(signalManifest);
 
+manifest.name = "Signal Native Client";
 manifest.description = "Mac native client for Signal";
 manifest.nodejs = true;
 
