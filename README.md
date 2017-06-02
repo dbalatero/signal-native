@@ -8,14 +8,20 @@ won't give you (thanks for the initial guide though!).
 ## Features
 
 * External links will open correctly in your configured external browser
+* Extra keyboard shortcuts
+  * `cmd+shift+[` and `cmd+shift+]` switch to previous/next chats in your list
+  * `cmd+f`, `cmd+/` and `/` focus the Search box
 
 ## Build + install
 
 ```
 git clone https://github.com/dbalatero/signal-native.git
 cd signal-native
-npm install
-brunch build
+
+yarn
+./bin/package
+
+cp -r 'dist/Signal Private Messenger.app' /Applications
 ```
 
 ## Develop new features
