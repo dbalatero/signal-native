@@ -31,7 +31,7 @@ nvm use
 git clone https://github.com/dbalatero/signal-native.git
 cd signal-native
 
-yarn
+yarn install
 ./bin/package
 
 cp -r 'dist/Signal Private Messenger.app' /Applications
