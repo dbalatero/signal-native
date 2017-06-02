@@ -11,8 +11,7 @@
     "before-brunch": "0.0.5",
     "brunch": "^2.10.9",
     "mousetrap": "^1.6.1",
-    "nw": "git+https://github.com/nurishi/npm-installer.git#fix-download-extract",
-    "sass-brunch": "^2.10.4"
+    "nw": "git+https://github.com/nurishi/npm-installer.git#fix-download-extract"
   },
   "scripts": {
     "start": "brunch watch",
