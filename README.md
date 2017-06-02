@@ -37,6 +37,21 @@ yarn install
 cp -r 'dist/Signal Private Messenger.app' /Applications
 ```
 
+## Open questions
+
+1. How does the security model of nwjs affect the build of this client?
+Currently we are passing `{ nodejs: true }` as an option to the client build,
+which enables us to access the `nw` variables from the browser. It doesn't
+seem to add access to things like `process` or `fs`, but more audit would be
+good.
+
+2. Can we isolate the code that relies on `nodejs: true` in a better way?
+nwjs documentation is a little spotty on this. It's really only needed for
+this [external link fix](https://github.com/dbalatero/signal-native/blob/master/src/fix_external_links.js).
+
+3. I should probably just contribute the keyboard shortcuts back to the
+Signal Desktop repo.
+
 ## Develop new features
 
 To start developing, you can run `brunch watch` in the background to 
