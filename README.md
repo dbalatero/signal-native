@@ -16,7 +16,17 @@ won't give you (thanks for the initial guide though!).
 
 ## Build + install
 
+Before you build, you'll need to have:
+
+* yarn
+* possibly nvm
+
 ```
+# This is the version I happened to use, it might work with any old version?
+# You might be able to skip these nvm steps and move on to cloning the repo
+nvm install 8.0.0
+nvm use
+
 git clone https://github.com/dbalatero/signal-native.git
 cd signal-native
 
