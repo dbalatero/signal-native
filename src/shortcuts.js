@@ -21,15 +21,31 @@ function focusSearchField() {
 }
 
 function firstConversation() {
-  return find(".conversation-list-item:first-of-type");
+  if (currentlySearching()) {
+    return find(".search-results .conversation-list-item:first-of-type");
+  } else {
+    return find(".conversation-list-item:first-of-type");
+  }
 }
 
 function lastConversation() {
-  return find(".conversation-list-item:last-of-type");
+  if (currentlySearching()) {
+    return find(".search-results .conversation-list-item:last-of-type");
+  } else {
+    return find(".conversation-list-item:last-of-type");
+  }
+}
+
+function currentlySearching() {
+  return find('.search').value !== '';
 }
 
 function currentConversation() {
-  return find(".conversation-list-item.selected");
+  if (currentlySearching()) {
+    return find(".search-results .conversation-list-item.selected");
+  } else {
+    return find(".conversation-list-item.selected");
+  }
 }
 
 function previousConversation() {
